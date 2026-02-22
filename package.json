@@ -1,6 +1,6 @@
 {
-  "name": "@skybin-tech/ui",
-  "version": "0.0.1",
+  "name": "@skybin-tech/nebula-ui",
+  "version": "0.0.2",
   "type": "module",
   "description": "Reusable React component library with form validation using shadcn/ui patterns, react-hook-form, and Zod",
   "main": "./dist/cjs/src/index.cjs",
@@ -116,7 +116,8 @@
     "preview": "vite preview",
     "prepublishOnly": "npm run build:lib",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "publish": "yarn version --patch && yarn publish --access public"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
