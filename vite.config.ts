@@ -22,7 +22,7 @@ export default defineConfig({
       outDir: "dist",
       entryRoot: "src",
       copyDtsFiles: true,
-    })
+    }) as any
   ],
   build: {
     lib: {
@@ -91,4 +91,4 @@ export default defineConfig({
       }
     }]
   }
-});
+} as any);
