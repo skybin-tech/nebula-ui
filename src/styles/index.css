@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Base form styles */
+:root {
+  --form-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --form-border-radius: 6px;
+  --form-transition: all 0.2s ease-in-out;
+  
+  /* Colors */
+  --form-primary: #1890ff;
+  --form-primary-hover: #40a9ff;
+  --form-error: #ff4d4f;
+  --form-success: #52c41a;
+  --form-warning: #faad14;
+  --form-border: #d9d9d9;
+  --form-border-hover: #40a9ff;
+  --form-text: rgba(0, 0, 0, 0.85);
+  --form-text-secondary: rgba(0, 0, 0, 0.45);
+  --form-bg: #ffffff;
+  --form-bg-disabled: #f5f5f5;
+}
+
+/* Dark mode support */
+.dark {
+  --form-primary: #177ddc;
+  --form-primary-hover: #3c9ae8;
+  --form-error: #a61d24;
+  --form-success: #49aa19;
+  --form-warning: #d89614;
+  --form-border: #434343;
+  --form-border-hover: #3c9ae8;
+  --form-text: rgba(255, 255, 255, 0.85);
+  --form-text-secondary: rgba(255, 255, 255, 0.45);
+  --form-bg: #141414;
+  --form-bg-disabled: #262626;
+}

@@ -1,0 +1,203 @@
+{
+  "name": "skybin-ui",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Reusable React component library with form validation using shadcn/ui patterns, react-hook-form, and Zod",
+  "main": "./dist/cjs/src/index.cjs",
+  "module": "./dist/src/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/src/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/cjs/src/index.cjs"
+      }
+    },
+    "./components/Button": {
+      "import": {
+        "types": "./dist/components/Button/index.d.ts",
+        "default": "./dist/src/components/Button/Button2.js"
+      },
+      "require": {
+        "types": "./dist/components/Button/index.d.ts",
+        "default": "./dist/cjs/src/components/Button/Button2.cjs"
+      }
+    },
+    "./components/Form": {
+      "import": {
+        "types": "./dist/components/Form/index.d.ts",
+        "default": "./dist/src/components/Form/Form.js"
+      },
+      "require": {
+        "types": "./dist/components/Form/index.d.ts",
+        "default": "./dist/cjs/src/components/Form/Form.cjs"
+      }
+    },
+    "./components/Input": {
+      "import": {
+        "types": "./dist/components/Input/index.d.ts",
+        "default": "./dist/src/components/Input/Input2.js"
+      },
+      "require": {
+        "types": "./dist/components/Input/index.d.ts",
+        "default": "./dist/cjs/src/components/Input/Input2.cjs"
+      }
+    },
+    "./hooks/useDebounce": {
+      "import": {
+        "types": "./dist/hooks/useDebounce.d.ts",
+        "default": "./dist/src/hooks/useDebounce.js"
+      },
+      "require": {
+        "types": "./dist/hooks/useDebounce.d.ts",
+        "default": "./dist/cjs/src/hooks/useDebounce.cjs"
+      }
+    },
+    "./hooks/useToggle": {
+      "import": {
+        "types": "./dist/hooks/useToggle.d.ts",
+        "default": "./dist/src/hooks/useToggle.js"
+      },
+      "require": {
+        "types": "./dist/hooks/useToggle.d.ts",
+        "default": "./dist/cjs/src/hooks/useToggle.cjs"
+      }
+    },
+    "./utils/cn": {
+      "import": {
+        "types": "./dist/utils/cn.d.ts",
+        "default": "./dist/src/utils/cn.js"
+      },
+      "require": {
+        "types": "./dist/utils/cn.d.ts",
+        "default": "./dist/cjs/src/utils/cn.cjs"
+      }
+    },
+    "./styles.css": "./dist/skybin-ui.css",
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "components/Button": [
+        "./dist/components/Button/index.d.ts"
+      ],
+      "components/Form": [
+        "./dist/components/Form/index.d.ts"
+      ],
+      "components/Input": [
+        "./dist/components/Input/index.d.ts"
+      ],
+      "hooks/useDebounce": [
+        "./dist/hooks/useDebounce.d.ts"
+      ],
+      "hooks/useToggle": [
+        "./dist/hooks/useToggle.d.ts"
+      ],
+      "utils/cn": [
+        "./dist/utils/cn.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:lib": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build:lib",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "react-hook-form": "^7.0.0",
+    "zod": "^3.0.0 || ^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": false
+    },
+    "react-hook-form": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.0.1",
+    "@eslint/js": "^9.39.3",
+    "@storybook/addon-a11y": "^10.2.10",
+    "@storybook/addon-docs": "^10.2.10",
+    "@storybook/addon-onboarding": "^10.2.10",
+    "@storybook/addon-vitest": "^10.2.10",
+    "@storybook/react-vite": "^10.2.10",
+    "@types/glob": "^9.0.0",
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
+    "esbuild": "^0.27.3",
+    "eslint": "^9.39.3",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.0",
+    "eslint-plugin-storybook": "^10.2.10",
+    "glob": "^13.0.6",
+    "globals": "^16.5.0",
+    "playwright": "^1.58.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "storybook": "^10.2.10",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.56.0",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.0.18"
+  },
+  "resolutions": {
+    "vite": "^8.0.0-beta.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/skybin-ui.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "library",
+    "form",
+    "validation",
+    "zod",
+    "react-hook-form",
+    "typescript",
+    "tailwindcss"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-checkbox": "^1.3.3",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-radio-group": "^1.3.8",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-switch": "^1.2.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.575.0",
+    "react-hook-form": "^7.71.2",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.0",
+    "zod": "^4.3.6"
+  }
+}
