@@ -1,13 +1,6 @@
-/**
- * shadcn/ui Textarea component
- * @see https://ui.shadcn.com/docs/components/textarea
- * 
- * DO NOT MODIFY THIS FILE - It is generated from shadcn/ui
- * For customizations, create wrapper components instead.
- */
 import * as React from "react"
 
-import { cn } from "../../utils/cn"
+import { cn } from "@/utils"
 
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,

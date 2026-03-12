@@ -4,8 +4,9 @@ import { useController, useFormContext as useRHFFormContext, type FieldValues, t
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 import { FormConfigContext, type FormConfig, type FieldValidationRules } from "../Form/context";
-import { Textarea } from "../ui/textarea";
-import { Label } from "../ui/label";
+import { labelVariants } from "./variants";
+import { Textarea } from "../../primitives/textarea";
+import { Label } from "../../primitives/label";
 
 const textAreaSizeVariants = cva(
   "",
@@ -25,21 +26,6 @@ const textAreaSizeVariants = cva(
     defaultVariants: {
       size: "md",
       variant: "default",
-    },
-  }
-);
-
-const labelVariants = cva(
-  "block text-sm font-medium mb-1.5",
-  {
-    variants: {
-      required: {
-        true: "after:content-['*'] after:ml-0.5 after:text-destructive",
-        false: "",
-      },
-    },
-    defaultVariants: {
-      required: false,
     },
   }
 );

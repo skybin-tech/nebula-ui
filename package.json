@@ -1,7 +1,8 @@
 {
   "name": "@skybin-tech/nebula-ui",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "type": "module",
+  "author": "Anwar <anwar@skybin.io>",
   "description": "Reusable React component library with form validation using shadcn/ui patterns, react-hook-form, and Zod",
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/index.js",
@@ -20,11 +21,11 @@
     "./components/Button": {
       "import": {
         "types": "./dist/components/Button/index.d.ts",
-        "default": "./dist/components/Button/Button2.js"
+        "default": "./dist/components/Button/Button.js"
       },
       "require": {
         "types": "./dist/components/Button/index.d.ts",
-        "default": "./dist/cjs/components/Button/Button2.cjs"
+        "default": "./dist/cjs/components/Button/Button.cjs"
       }
     },
     "./components/Form": {
@@ -35,16 +36,6 @@
       "require": {
         "types": "./dist/components/Form/index.d.ts",
         "default": "./dist/cjs/components/Form/Form.cjs"
-      }
-    },
-    "./components/Input": {
-      "import": {
-        "types": "./dist/components/Input/index.d.ts",
-        "default": "./dist/components/Input/Input2.js"
-      },
-      "require": {
-        "types": "./dist/components/Input/index.d.ts",
-        "default": "./dist/cjs/components/Input/Input2.cjs"
       }
     },
     "./hooks/useDebounce": {
@@ -79,54 +70,54 @@
     },
     "./styles.css": "./dist/nebula-ui.css",
     "./package.json": "./package.json",
-    "./components/ui/Card": {
+    "./components/Card": {
       "import": {
-        "types": "./dist/components/ui/card.d.ts",
-        "default": "./dist/components/ui/card.js"
+        "types": "./dist/components/Card/index.d.ts",
+        "default": "./dist/components/Card/index.js"
       },
       "require": {
-        "types": "./dist/components/ui/card.d.ts",
-        "default": "./dist/cjs/components/ui/card.cjs"
+        "types": "./dist/components/Card/index.d.ts",
+        "default": "./dist/cjs/components/Card/index.cjs"
       }
     },
-    "./components/ui/Badge": {
+    "./components/Badge": {
       "import": {
-        "types": "./dist/components/ui/badge.d.ts",
-        "default": "./dist/components/ui/badge.js"
+        "types": "./dist/components/Badge/index.d.ts",
+        "default": "./dist/components/Badge/index.js"
       },
       "require": {
-        "types": "./dist/components/ui/badge.d.ts",
-        "default": "./dist/cjs/components/ui/badge.cjs"
+        "types": "./dist/components/Badge/index.d.ts",
+        "default": "./dist/cjs/components/Badge/index.cjs"
       }
     },
-    "./components/ui/Avatar": {
+    "./components/Avatar": {
       "import": {
-        "types": "./dist/components/ui/avatar.d.ts",
-        "default": "./dist/components/ui/avatar.js"
+        "types": "./dist/components/Avatar/index.d.ts",
+        "default": "./dist/components/Avatar/index.js"
       },
       "require": {
-        "types": "./dist/components/ui/avatar.d.ts",
-        "default": "./dist/cjs/components/ui/avatar.cjs"
+        "types": "./dist/components/Avatar/index.d.ts",
+        "default": "./dist/cjs/components/Avatar/index.cjs"
       }
     },
-    "./components/ui/DropdownMenu": {
+    "./components/DropdownMenu": {
       "import": {
-        "types": "./dist/components/ui/dropdown-menu.d.ts",
-        "default": "./dist/components/ui/dropdown-menu.js"
+        "types": "./dist/components/DropdownMenu/index.d.ts",
+        "default": "./dist/components/DropdownMenu/index.js"
       },
       "require": {
-        "types": "./dist/components/ui/dropdown-menu.d.ts",
-        "default": "./dist/cjs/components/ui/dropdown-menu.cjs"
+        "types": "./dist/components/DropdownMenu/index.d.ts",
+        "default": "./dist/cjs/components/DropdownMenu/index.cjs"
       }
     },
-    "./components/ui/Separator": {
+    "./components/Separator": {
       "import": {
-        "types": "./dist/components/ui/separator.d.ts",
-        "default": "./dist/components/ui/separator.js"
+        "types": "./dist/components/Separator/index.d.ts",
+        "default": "./dist/components/Separator/index.js"
       },
       "require": {
-        "types": "./dist/components/ui/separator.d.ts",
-        "default": "./dist/cjs/components/ui/separator.cjs"
+        "types": "./dist/components/Separator/index.d.ts",
+        "default": "./dist/cjs/components/Separator/index.cjs"
       }
     }
   },
@@ -138,24 +129,6 @@
       "components/Form": [
         "./dist/components/Form/index.d.ts"
       ],
-      "components/Input": [
-        "./dist/components/Input/index.d.ts"
-      ],
-      "components/ui/Card": [
-        "./dist/components/ui/card.d.ts"
-      ],
-      "components/ui/Badge": [
-        "./dist/components/ui/badge.d.ts"
-      ],
-      "components/ui/Avatar": [
-        "./dist/components/ui/avatar.d.ts"
-      ],
-      "components/ui/DropdownMenu": [
-        "./dist/components/ui/dropdown-menu.d.ts"
-      ],
-      "components/ui/Separator": [
-        "./dist/components/ui/separator.d.ts"
-      ],
       "hooks/useDebounce": [
         "./dist/hooks/useDebounce.d.ts"
       ],
@@ -164,6 +137,21 @@
       ],
       "utils/cn": [
         "./dist/utils/cn.d.ts"
+      ],
+      "components/Card": [
+        "./dist/components/Card/index.d.ts"
+      ],
+      "components/Badge": [
+        "./dist/components/Badge/index.d.ts"
+      ],
+      "components/Avatar": [
+        "./dist/components/Avatar/index.d.ts"
+      ],
+      "components/DropdownMenu": [
+        "./dist/components/DropdownMenu/index.d.ts"
+      ],
+      "components/Separator": [
+        "./dist/components/Separator/index.d.ts"
       ]
     }
   },
@@ -185,9 +173,24 @@
     "deploy": "yarn version --patch && yarn publish --access public"
   },
   "peerDependencies": {
+    "@hookform/resolvers": "^5.0.0",
+    "@radix-ui/react-avatar": ">=1.0.0",
+    "@radix-ui/react-checkbox": ">=1.0.0",
+    "@radix-ui/react-dropdown-menu": ">=2.0.0",
+    "@radix-ui/react-label": ">=2.0.0",
+    "@radix-ui/react-radio-group": ">=1.0.0",
+    "@radix-ui/react-select": ">=2.0.0",
+    "@radix-ui/react-separator": ">=1.0.0",
+    "@radix-ui/react-slot": ">=1.0.0",
+    "@radix-ui/react-switch": ">=1.0.0",
+    "class-variance-authority": ">=0.7.0",
+    "clsx": ">=2.0.0",
+    "lucide-react": ">=0.400.0",
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0",
     "react-hook-form": "^7.0.0",
+    "tailwind-merge": ">=2.0.0",
+    "tailwindcss": "^3.0.0 || ^4.0.0",
     "zod": "^3.0.0 || ^4.0.0"
   },
   "peerDependenciesMeta": {
@@ -196,48 +199,68 @@
     },
     "react-hook-form": {
       "optional": false
+    },
+    "@hookform/resolvers": {
+      "optional": false
     }
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.0.1",
-    "@eslint/js": "^9.39.3",
-    "@storybook/addon-a11y": "^10.2.10",
-    "@storybook/addon-docs": "^10.2.10",
-    "@storybook/addon-onboarding": "^10.2.10",
-    "@storybook/addon-vitest": "^10.2.10",
-    "@storybook/react-vite": "^10.2.10",
-    "@tailwindcss/vite": "^4.2.0",
+    "@eslint/js": "^9.39.4",
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-avatar": "^1.1.11",
+    "@radix-ui/react-checkbox": "^1.3.3",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-radio-group": "^1.3.8",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-separator": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@storybook/addon-a11y": "^10.2.17",
+    "@storybook/addon-docs": "^10.2.17",
+    "@storybook/addon-onboarding": "^10.2.17",
+    "@storybook/addon-vitest": "^10.2.17",
+    "@storybook/react-vite": "^10.2.17",
+    "@tailwindcss/vite": "^4.2.1",
     "@types/glob": "^9.0.0",
-    "@types/node": "^25.3.0",
+    "@types/node": "^25.4.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react-swc": "^4.2.3",
-    "@vitest/browser-playwright": "^4.0.18",
-    "@vitest/coverage-v8": "^4.0.18",
-    "esbuild": "^0.27.3",
-    "eslint": "^9.39.3",
+    "@vitejs/plugin-react-swc": "^4.3.0",
+    "@vitest/browser-playwright": "^4.1.0",
+    "@vitest/coverage-v8": "^4.1.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "esbuild": "^0.27.4",
+    "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.0",
-    "eslint-plugin-storybook": "^10.2.10",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-storybook": "^10.2.17",
     "glob": "^13.0.6",
     "globals": "^16.5.0",
+    "lucide-react": "^0.577.0",
     "playwright": "^1.58.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "storybook": "^10.2.10",
+    "react-hook-form": "^7.71.2",
+    "storybook": "^10.2.17",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.56.0",
+    "typescript-eslint": "^8.57.0",
     "vite": "^7.3.1",
     "vite-plugin-checker": "^0.12.0",
     "vite-plugin-dts": "^4.5.4",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-eslint2": "^5.0.5",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.0",
+    "zod": "^3.25.76"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/skybin-ui.git"
+    "url": "git+https://github.com/skybin-tech/nebula-ui.git"
   },
   "keywords": [
     "react",
@@ -251,24 +274,5 @@
     "typescript",
     "tailwindcss"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "@hookform/resolvers": "^5.2.2",
-    "@radix-ui/react-avatar": "^1.1.1",
-    "@radix-ui/react-checkbox": "^1.3.3",
-    "@radix-ui/react-dropdown-menu": "^2.1.1",
-    "@radix-ui/react-label": "^2.1.8",
-    "@radix-ui/react-radio-group": "^1.3.8",
-    "@radix-ui/react-select": "^2.2.6",
-    "@radix-ui/react-separator": "^1.1.0",
-    "@radix-ui/react-slot": "^1.2.4",
-    "@radix-ui/react-switch": "^1.2.6",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.575.0",
-    "react-hook-form": "^7.0.0",
-    "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.0",
-    "zod": "^3.0.0 || ^4.0.0"
-  }
+  "license": "MIT"
 }

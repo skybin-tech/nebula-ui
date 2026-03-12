@@ -1,16 +1,9 @@
-/**
- * shadcn/ui Switch component
- * @see https://ui.shadcn.com/docs/components/switch
- * 
- * DO NOT MODIFY THIS FILE - It is generated from shadcn/ui
- * For customizations, create wrapper components instead.
- */
 "use client"
 
 import * as React from "react"
 import * as SwitchPrimitives from "@radix-ui/react-switch"
 
-import { cn } from "../../utils/cn"
+import { cn } from "@/utils"
 
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,

@@ -4,8 +4,9 @@ import { useController, useFormContext as useRHFFormContext, type FieldValues, t
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 import { FormConfigContext, type FormConfig, type FieldValidationRules } from "../Form/context";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { labelVariants } from "./variants";
+import { Input } from "../../primitives/input";
+import { Label } from "../../primitives/label";
 import { X } from "lucide-react";
 
 const textBoxVariants = cva(
@@ -26,21 +27,6 @@ const textBoxVariants = cva(
     defaultVariants: {
       size: "md",
       variant: "default",
-    },
-  }
-);
-
-const labelVariants = cva(
-  "block text-sm font-medium mb-1.5",
-  {
-    variants: {
-      required: {
-        true: "after:content-['*'] after:ml-0.5 after:text-destructive",
-        false: "",
-      },
-    },
-    defaultVariants: {
-      required: false,
     },
   }
 );

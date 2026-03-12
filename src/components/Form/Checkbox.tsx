@@ -4,8 +4,8 @@ import { useController, useFormContext as useRHFFormContext, type FieldValues, t
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 import { FormConfigContext, type FormConfig, type FieldValidationRules } from "../Form/context";
-import { Checkbox as ShadcnCheckbox } from "../ui/checkbox";
-import { Label } from "../ui/label";
+import { Checkbox as ShadcnCheckbox } from "../../primitives/checkbox";
+import { Label } from "../../primitives/label";
 import type * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 
 const checkboxSizeVariants = cva(

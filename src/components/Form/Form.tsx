@@ -1,4 +1,4 @@
-import { useCallback, useState, type ReactNode } from "react";
+import { useCallback, type ReactNode } from "react";
 import {
   useForm,
   FormProvider as RHFFormProvider,
@@ -96,62 +96,37 @@ export function Form<
   ...formProps
 }: FormProps<TFieldValues, TContext>) {
   const mergedConfig = { ...defaultFormConfig, ...config };
-  
-  // Field validation registry
+
   const {
-    registerFieldValidation: baseRegister,
-    unregisterFieldValidation: baseUnregister,
+    registerFieldValidation,
+    unregisterFieldValidation,
     getValidationSchema,
   } = useFieldValidationRegistry();
 
-  // Track schema version for re-renders
-  const [schemaVersion, setSchemaVersion] = useState(0);
-
-  // Wrap register to trigger re-render
-  const registerFieldValidation = useCallback((field: Parameters<typeof baseRegister>[0]) => {
-    baseRegister(field);
-    setSchemaVersion(v => v + 1);
-  }, [baseRegister]);
-
-  // Wrap unregister to trigger re-render
-  const unregisterFieldValidation = useCallback((name: string) => {
-    baseUnregister(name);
-    setSchemaVersion(v => v + 1);
-  }, [baseUnregister]);
-
-  // Build dynamic resolver that combines base schema with field validations
-  const buildResolver = useCallback((): Resolver<TFieldValues> | undefined => {
-    if (customResolver) {
-      return customResolver;
-    }
-
-    // Get field-based schema
-    const fieldSchema = getValidationSchema();
-    
-    // Merge with base schema if provided
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let finalSchema: z.ZodType<any, any, any>;
-    
-    if (baseSchema) {
-      // Merge base schema with field schema
-      // Field schema takes precedence for overlapping fields
+  // Stable resolver that reads from fieldsRef at validation time — no re-renders
+  // needed on field registration, and no race condition with useEffect timing.
+  const dynamicResolver = useCallback<Resolver<TFieldValues>>(
+    async (vals, context, options) => {
+      if (customResolver) {
+        return customResolver(vals, context, options);
+      }
+      const fieldSchema = getValidationSchema();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      let finalSchema: z.ZodType<any, any, any>;
       if (baseSchema instanceof z.ZodObject) {
         finalSchema = baseSchema.merge(fieldSchema);
       } else {
-        finalSchema = fieldSchema;
+        finalSchema = baseSchema ?? fieldSchema;
       }
-    } else {
-      finalSchema = fieldSchema;
-    }
+      return zodResolver(finalSchema)(vals, context, options);
+    },
+    // getValidationSchema reads a ref — always current, intentionally omitted.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [baseSchema, customResolver]
+  );
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return zodResolver(finalSchema) as any;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [baseSchema, customResolver, getValidationSchema, schemaVersion]);
-
-  // Create internal form
   const internalForm = useForm<TFieldValues>({
-    resolver: buildResolver(),
+    resolver: dynamicResolver,
     defaultValues,
     values,
     mode,
@@ -187,7 +162,6 @@ export function Form<
         <form
           {...formProps}
           onSubmit={handleSubmit}
-          className={formProps.className}
           noValidate
         >
           {children}

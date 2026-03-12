@@ -1,30 +1,8 @@
-// Components
-export { Button } from "./components/Button";
-export type { ButtonProps } from "./components/Button";
+// ─── Button ─────────────────────────────────────────────────────────────────
+export { Button } from "./components/Button"
+export type { ButtonProps } from "./components/Button"
 
-export { Input } from "./components/Input";
-export type { InputProps } from "./components/Input";
-
-// shadcn/ui Primitives (DO NOT MODIFY - for upgrades)
-export {
-  Input as ShadcnInput,
-  Label as ShadcnLabel,
-  Checkbox as ShadcnCheckbox,
-  RadioGroup as ShadcnRadioGroup,
-  RadioGroupItem as ShadcnRadioGroupItem,
-  Switch as ShadcnSwitch,
-  Select as ShadcnSelect,
-  SelectGroup as ShadcnSelectGroup,
-  SelectValue as ShadcnSelectValue,
-  SelectTrigger as ShadcnSelectTrigger,
-  SelectContent as ShadcnSelectContent,
-  SelectLabel as ShadcnSelectLabel,
-  SelectItem as ShadcnSelectItem,
-  SelectSeparator as ShadcnSelectSeparator,
-  Textarea as ShadcnTextarea,
-} from "./components/ui";
-
-// Form Components (Wrappers around shadcn/ui primitives)
+// ─── Form + Field Wrappers ───────────────────────────────────────────────────
 export {
   Form,
   TextBox,
@@ -42,7 +20,7 @@ export {
   useForm,
   useFormField,
   useFieldError,
-} from "./components/Form";
+} from "./components/Form"
 
 export type {
   FormProps,
@@ -59,15 +37,46 @@ export type {
   FormContextValue,
   FieldValidationRules,
   FieldRegistration,
-} from "./components/Form";
+} from "./components/Form"
 
-// Hooks
-export { useToggle } from "./hooks/useToggle";
-export { useDebounce } from "./hooks/useDebounce";
+// ─── Display Components ──────────────────────────────────────────────────────
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "./components/Card"
 
-// Utils
-export { cn } from "./utils/cn";
+export { Badge, badgeVariants } from "./components/Badge"
+export type { BadgeProps } from "./components/Badge"
 
-// Re-export zod for convenience
-export { z } from "zod";
-export type { ZodType } from "zod";
+export { Avatar, AvatarImage, AvatarFallback } from "./components/Avatar"
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuGroup,
+  DropdownMenuPortal,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuRadioGroup,
+} from "./components/DropdownMenu"
+
+export { Separator } from "./components/Separator"
+
+// ─── Hooks ───────────────────────────────────────────────────────────────────
+export { useToggle } from "./hooks/useToggle"
+export { useDebounce } from "./hooks/useDebounce"
+
+// ─── Utils ───────────────────────────────────────────────────────────────────
+export { cn } from "./utils/cn"

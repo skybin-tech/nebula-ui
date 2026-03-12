@@ -4,8 +4,8 @@ import { useController, useFormContext as useRHFFormContext, type FieldValues, t
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 import { FormConfigContext, type FormConfig, type FieldValidationRules } from "../Form/context";
-import { Switch as ShadcnSwitch } from "../ui/switch";
-import { Label } from "../ui/label";
+import { Switch as ShadcnSwitch } from "../../primitives/switch";
+import { Label } from "../../primitives/label";
 import type * as SwitchPrimitives from "@radix-ui/react-switch";
 
 const switchSizeVariants = cva(

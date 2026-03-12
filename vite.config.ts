@@ -1,7 +1,10 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import dts from "vite-plugin-dts";
+import react from "@vitejs/plugin-react-swc";
+import checker from "vite-plugin-checker";
+import tsconfigPaths from 'vite-tsconfig-paths';
+import eslint from 'vite-plugin-eslint2';
+import tailwindcss from "@tailwindcss/vite";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
 import path from 'node:path';
@@ -12,17 +15,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
-    react(), 
-    dts({
-      include: ["src"],
-      exclude: ["src/**/*.stories.tsx", "src/**/*.test.tsx", "src/**/*.spec.tsx", "src/stories/**"],
-      rollupTypes: false,
-      insertTypesEntry: true,
-      tsconfigPath: resolve(__dirname, "tsconfig.app.json"),
-      outDir: "dist",
-      entryRoot: "src",
-      copyDtsFiles: true,
-    }) as any
+    react(),
+      tailwindcss(),
+      tsconfigPaths(),
+      checker({ typescript: true }),
+      eslint(),
+    
   ],
   build: {
     lib: {
@@ -37,7 +35,21 @@ export default defineConfig({
         "zod", 
         "react-hook-form", 
         "@hookform/resolvers", 
-        "@hookform/resolvers/zod"
+        "@hookform/resolvers/zod",
+        "@radix-ui/react-checkbox",
+        "@radix-ui/react-label",
+        "@radix-ui/react-radio-group",
+        "@radix-ui/react-select",
+        "@radix-ui/react-switch",
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-separator",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-avatar",
+        "lucide-react",
+        "class-variance-authority",
+        "tailwind-merge",
+        "clsx",
+        "tailwindcss"
       ],
       output: [
         {

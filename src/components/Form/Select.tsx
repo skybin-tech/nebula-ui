@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { useController, useFormContext as useRHFFormContext, type FieldValues, type FieldPath, type Control } from "react-hook-form";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
+import { labelVariants } from "./variants";
 import { FormConfigContext, type FormConfig, type FieldValidationRules } from "../Form/context";
 import {
   Select as ShadcnSelect,
@@ -10,8 +11,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
-import { Label } from "../ui/label";
+} from "../../primitives/select";
+import { Label } from "../../primitives/label";
 
 const selectSizeVariants = cva(
   "",
@@ -25,21 +26,6 @@ const selectSizeVariants = cva(
     },
     defaultVariants: {
       size: "md",
-    },
-  }
-);
-
-const labelVariants = cva(
-  "block text-sm font-medium mb-1.5",
-  {
-    variants: {
-      required: {
-        true: "after:content-['*'] after:ml-0.5 after:text-destructive",
-        false: "",
-      },
-    },
-    defaultVariants: {
-      required: false,
     },
   }
 );

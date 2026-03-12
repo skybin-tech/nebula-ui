@@ -4,8 +4,8 @@ import { useController, useFormContext as useRHFFormContext, type FieldValues, t
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 import { FormConfigContext, type FormConfig, type FieldValidationRules } from "../Form/context";
-import { RadioGroup as ShadcnRadioGroup, RadioGroupItem as ShadcnRadioGroupItem } from "../ui/radio-group";
-import { Label } from "../ui/label";
+import { RadioGroup as ShadcnRadioGroup, RadioGroupItem as ShadcnRadioGroupItem } from "../../primitives/radio-group";
+import { Label } from "../../primitives/label";
 import type * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 
 const radioSizeVariants = cva(
