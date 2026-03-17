@@ -1,6 +1,6 @@
 {
   "name": "@skybin-tech/nebula-ui",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "author": "Anwar <anwar@skybin.io>",
   "description": "Reusable React component library with form validation using shadcn/ui patterns, react-hook-form, and Zod",
@@ -68,8 +68,7 @@
         "default": "./dist/cjs/utils/cn.cjs"
       }
     },
-    "./styles.css": "./dist/nebula-ui.css",
-    "./package.json": "./package.json",
+"./package.json": "./package.json",
     "./components/Card": {
       "import": {
         "types": "./dist/components/Card/index.d.ts",
@@ -170,7 +169,7 @@
     "prepublishOnly": "npm run build:lib",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy": "yarn version --patch && yarn publish --access public"
+    "deploy": "npm publish --access public"
   },
   "peerDependencies": {
     "@hookform/resolvers": "^5.0.0",
