@@ -11,6 +11,8 @@
  * @see https://ui.shadcn.com/docs
  */
 
+export { ButtonPrimitive, buttonVariants } from "./button"
+export type { ButtonPrimitiveProps } from "./button"
 export { Input } from "./input"
 export { Label } from "./label"
 export { Checkbox } from "./checkbox"

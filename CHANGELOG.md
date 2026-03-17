@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.13] - 2026-03-17
+
+### Added
+
+- **Button**: New `primitives/button.tsx` — shadcn/ui-style `ButtonPrimitive` with `asChild`/`Slot` support and standard `buttonVariants` CVA (variants: `default`, `destructive`, `outline`, `secondary`, `ghost`, `link`; sizes: `default`, `sm`, `lg`, `icon`).
+- **Button**: `asChild` prop on the public `Button` component — renders children via Slot so it can wrap `<Link>` or any element without a wrapping `<button>`.
+- **Exports**: `buttonVariants` is now exported from the package root for consumers who need to compose button styles externally.
+
+### Changed
+
+- **Button**: Refactored to wrap `ButtonPrimitive` instead of rendering a raw `<button>`. Variant/size names (`primary`→`default`, `danger`→`destructive`, `md`→`default`) are mapped internally, keeping the existing public API unchanged.
+- **Button**: Loading overlay now uses `position: absolute` so the button dimensions stay stable while loading.
+
 ## [0.0.12] - 2026-03-17
 
 ### Fixed
