@@ -1,9 +1,9 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 font-medium rounded-md border transition-all cursor-pointer relative disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+  "inline-flex items-center justify-center gap-2 font-medium rounded-md border transition-all relative disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
   {
     variants: {
       variant: {
@@ -48,20 +48,26 @@ export interface ButtonProps
 /**
  * A customizable button component with multiple variants and sizes
  */
-export function Button({
-  children,
-  variant = "primary",
-  size = "md",
-  fullWidth = false,
-  loading = false,
-  disabled,
-  className,
-  ...props
-}: ButtonProps) {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  {
+    children,
+    variant = "primary",
+    size = "md",
+    fullWidth = false,
+    loading = false,
+    disabled,
+    className,
+    style,
+    ...props
+  },
+  ref
+) {
   return (
     <button
+      ref={ref}
       className={cn(buttonVariants({ variant, size, fullWidth }), className)}
       disabled={disabled || loading}
+      style={{ cursor: "pointer", ...style }}
       {...props}
     >
       {loading && (
@@ -70,4 +76,4 @@ export function Button({
       <span className={cn(loading && "invisible")}>{children}</span>
     </button>
   );
-}
+});

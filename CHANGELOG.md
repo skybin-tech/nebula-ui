@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.12] - 2026-03-17
+
+### Fixed
+
+- **Button**: Wrapped with `React.forwardRef` so refs are forwarded to the underlying `<button>` element — required for Radix UI's `asChild`/`Slot` pattern (e.g. `DropdownMenuTrigger`, `DialogTrigger`).
+- **Button**: Removed `cursor-pointer` Tailwind utility from the `cva` base class and replaced with an inline `style={{ cursor: 'pointer' }}` to avoid silent breakage in Tailwind v4 consumers that don't configure a custom `@source` for `node_modules`.
+
+## [0.0.11] - 2026-03-17
+
+### Fixed
+
+- **vite.config.ts**: Added `react/jsx-dev-runtime` to `rollupOptions.external` so Vite/Rollup no longer inlines a CJS shim for it in the ESM output. Without this entry, the lazy `require()` wrapper pattern injected by Rollup caused Turbopack to reject the build with "dynamic usage of require is not supported".
+
 ## [0.0.10] - 2026-03-17
 
 ### Fixed
