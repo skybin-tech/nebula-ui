@@ -1,4 +1,4 @@
-import { useCallback, type ReactNode } from "react";
+import { useCallback, useMemo, type ReactNode } from "react";
 import {
   useForm,
   FormProvider as RHFFormProvider,
@@ -147,14 +147,38 @@ export function Form<
     }
   };
 
-  const contextValue: FormContextValue<TFieldValues> = {
-    form,
-    registerFieldValidation,
-    unregisterFieldValidation,
-    getValidationSchema,
-    triggerValidation,
-    ...mergedConfig,
-  };
+  const contextValue = useMemo<FormContextValue<TFieldValues>>(
+    () => ({
+      form,
+      registerFieldValidation,
+      unregisterFieldValidation,
+      getValidationSchema,
+      triggerValidation,
+      showInlineErrors: mergedConfig.showInlineErrors,
+      validateOnBlur: mergedConfig.validateOnBlur,
+      validateOnChange: mergedConfig.validateOnChange,
+      size: mergedConfig.size,
+      layout: mergedConfig.layout,
+      labelWidth: mergedConfig.labelWidth,
+      disabled: mergedConfig.disabled,
+      colon: mergedConfig.colon,
+    }),
+    [
+      form,
+      registerFieldValidation,
+      unregisterFieldValidation,
+      getValidationSchema,
+      triggerValidation,
+      mergedConfig.showInlineErrors,
+      mergedConfig.validateOnBlur,
+      mergedConfig.validateOnChange,
+      mergedConfig.size,
+      mergedConfig.layout,
+      mergedConfig.labelWidth,
+      mergedConfig.disabled,
+      mergedConfig.colon,
+    ]
+  );
 
   return (
     <FormConfigContext.Provider value={contextValue as FormContextValue}>

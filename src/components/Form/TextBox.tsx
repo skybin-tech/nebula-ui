@@ -147,16 +147,21 @@ function TextBoxInner<
   // Try to get form context
   const formConfigContext = useContext(FormConfigContext);
   const formConfig: FormConfig = formConfigContext ?? {};
-  
+
   // Get form context from react-hook-form
   const rhfContext = useRHFFormContext<TFieldValues>();
   const control = externalControl ?? rhfContext?.control;
 
+  // Destructure stable function references so the effect doesn't depend on the
+  // context object identity (which changes every render due to inline construction).
+  const registerFieldValidation = formConfigContext?.registerFieldValidation;
+  const unregisterFieldValidation = formConfigContext?.unregisterFieldValidation;
+
   // Register validation rules with the form
   useEffect(() => {
-    if (formConfigContext?.registerFieldValidation) {
+    if (registerFieldValidation) {
       const rules: FieldValidationRules = {};
-      
+
       if (required !== undefined) rules.required = required;
       if (minLength !== undefined) rules.minLength = minLength;
       if (maxLength !== undefined) rules.maxLength = maxLength;
@@ -174,18 +179,19 @@ function TextBoxInner<
         fieldType = "number";
       }
 
-      formConfigContext.registerFieldValidation({
+      registerFieldValidation({
         name: name as string,
         type: fieldType,
         rules,
       });
 
       return () => {
-        formConfigContext.unregisterFieldValidation(name as string);
+        unregisterFieldValidation?.(name as string);
       };
     }
   }, [
-    formConfigContext,
+    registerFieldValidation,
+    unregisterFieldValidation,
     name,
     required,
     minLength,
