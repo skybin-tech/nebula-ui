@@ -5,4 +5,4 @@ export {
   CardDescription,
   CardContent,
   CardFooter,
-} from "../../primitives/card"
+} from "./Card"

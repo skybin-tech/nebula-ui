@@ -1,7 +1,9 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
-import { ButtonPrimitive, buttonVariants } from "../../primitives/button";
+import { ButtonPrimitive, buttonVariants } from "../../primitives/button"
+
+export { buttonVariants };
 
 type PrimitiveVariant = NonNullable<VariantProps<typeof buttonVariants>["variant"]>;
 type PrimitiveSize = NonNullable<VariantProps<typeof buttonVariants>["size"]>;

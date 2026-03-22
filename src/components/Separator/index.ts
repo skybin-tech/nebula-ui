@@ -1,1 +1,1 @@
-export { Separator } from "../../primitives/separator"
+export { Separator } from "./Separator"
