@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.14] - 2026-03-22
+
+### Added
+
+- **TextBox**: Auto-infers Zod validation rules from the `type` prop — no extra props needed:
+  - `type="email"` → `z.string().email()`
+  - `type="url"` → `z.string().url()`
+  - `type="tel"` → `z.string().regex(/^\+?[\d\s\-().]{7,}$/)` with "Invalid phone number" message
+  - `type="number"` → `z.coerce.number()`
+  - `type="date"` → `z.coerce.date()`
+  - Explicit props (`email`, `url`, `pattern`) still take precedence over auto-inferred rules.
+
+### Changed
+
+- **TextBox primitive**: Renamed `primitives/input.tsx` → `primitives/textbox.tsx`; export renamed `Input` → `TextBoxPrimitive` to match project naming conventions.
+
 ## [0.0.13] - 2026-03-17
 
 ### Added

@@ -13,7 +13,7 @@
 
 export { ButtonPrimitive, buttonVariants } from "./button"
 export type { ButtonPrimitiveProps } from "./button"
-export { Input } from "./input"
+export { TextBoxPrimitive } from "./textbox"
 export { Label } from "./label"
 export { Checkbox } from "./checkbox"
 export { RadioGroup, RadioGroupItem } from "./radio-group"

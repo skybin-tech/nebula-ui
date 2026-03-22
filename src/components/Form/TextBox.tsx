@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 import { FormConfigContext, type FormConfig, type FieldValidationRules } from "../Form/context";
 import { labelVariants } from "./variants";
-import { Input } from "../../primitives/input";
+import { TextBoxPrimitive } from "../../primitives/textbox";
 import { Label } from "../../primitives/label";
 import { X } from "lucide-react";
 
@@ -172,11 +172,20 @@ function TextBoxInner<
       if (url !== undefined) rules.url = url;
       if (validate !== undefined) rules.validate = validate;
 
-      // Determine field type based on input type
+      // Determine field type and auto-infer rules from input type
       const inputType = props.type ?? "text";
-      let fieldType: "string" | "number" = "string";
+      let fieldType: "string" | "number" | "date" = "string";
+
       if (inputType === "number") {
         fieldType = "number";
+      } else if (inputType === "date") {
+        fieldType = "date";
+      } else if (inputType === "email" && rules.email === undefined) {
+        rules.email = true;
+      } else if (inputType === "url" && rules.url === undefined) {
+        rules.url = true;
+      } else if (inputType === "tel" && rules.pattern === undefined) {
+        rules.pattern = { value: /^\+?[\d\s\-().]{7,}$/, message: "Invalid phone number" };
       }
 
       registerFieldValidation({
@@ -246,7 +255,7 @@ function TextBoxInner<
           </div>
         )}
         
-        <Input
+        <TextBoxPrimitive
           {...props}
           {...field}
           ref={(node) => {
@@ -275,7 +284,7 @@ function TextBoxInner<
             className
           )}
         />
-        
+
         {(suffix || (allowClear && field.value)) && (
           <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
             {allowClear && field.value && (
