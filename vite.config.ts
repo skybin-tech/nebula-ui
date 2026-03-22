@@ -29,10 +29,11 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        "react", 
-        "react-dom", 
-        "react/jsx-runtime", 
-        "zod", 
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+        "zod",
         "react-hook-form", 
         "@hookform/resolvers", 
         "@hookform/resolvers/zod",
