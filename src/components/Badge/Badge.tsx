@@ -1,4 +1,4 @@
-import { Badge as BadgePrimitive, badgeVariants } from "../../primitives/badge"
+import { Badge as BadgePrimitive, badgeVariants as badgeVariantsPrimitive } from "../../primitives/badge"
 import type { BadgeProps as BadgePrimitiveProps } from "../../primitives/badge"
 
 export type BadgeProps = BadgePrimitiveProps
@@ -8,4 +8,4 @@ export function Badge(props: BadgeProps) {
 }
 Badge.displayName = "Badge"
 
-export { badgeVariants }
+export const badgeVariants = badgeVariantsPrimitive
