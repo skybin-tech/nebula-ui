@@ -74,6 +74,20 @@ export {
 
 export { Separator } from "./components/Separator"
 
+// ─── Feedback / Layout ───────────────────────────────────────────────────────
+export { Alert, AlertTitle, AlertDescription } from "./components/Alert"
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./components/Tabs"
+
+// ─── Form Primitives (standalone) ────────────────────────────────────────────
+export { Input } from "./components/Input"
+export type { InputProps } from "./components/Input"
+
+export { Label } from "./components/Label"
+export type { LabelProps } from "./components/Label"
+
+export { Textarea } from "./components/Textarea"
+export type { TextareaProps } from "./components/Textarea"
+
 // ─── Hooks ───────────────────────────────────────────────────────────────────
 export { useToggle } from "./hooks/useToggle"
 export { useDebounce } from "./hooks/useDebounce"

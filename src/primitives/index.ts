@@ -53,3 +53,6 @@ export {
   DropdownMenuRadioGroup,
 } from "./dropdown-menu"
 export { Separator } from "./separator"
+export { Input } from "./input"
+export { Alert, AlertTitle, AlertDescription } from "./alert"
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs"

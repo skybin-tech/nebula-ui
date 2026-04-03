@@ -10,17 +10,24 @@ import { fileURLToPath } from "url";
 import path from 'node:path';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
+import dts from 'vite-plugin-dts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
     react(),
-      tailwindcss(),
-      tsconfigPaths(),
-      checker({ typescript: true }),
-      eslint(),
-    
+    tailwindcss(),
+    tsconfigPaths(),
+    checker({ typescript: true }),
+    eslint(),
+    dts({
+      include: ['src'],
+      outDir: 'dist',
+      tsconfigPath: './tsconfig.app.json',
+      insertTypesEntry: true,
+      rollupTypes: false,
+    }),
   ],
   build: {
     lib: {
@@ -46,6 +53,7 @@ export default defineConfig({
         "@radix-ui/react-separator",
         "@radix-ui/react-slot",
         "@radix-ui/react-avatar",
+        "@radix-ui/react-tabs",
         "lucide-react",
         "class-variance-authority",
         "tailwind-merge",

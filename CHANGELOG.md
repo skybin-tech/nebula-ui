@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.17] - 2026-04-03
+
+### Added
+
+- **Alert**: New `Alert`, `AlertTitle`, `AlertDescription` components exported from `components/Alert` and `primitives/alert.tsx`
+- **Tabs**: New `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` components built on `@radix-ui/react-tabs`; exported from `components/Tabs` and `primitives/tabs.tsx`
+- **Input**: New standalone `Input` component (with `InputProps` type) exported from `components/Input` and `primitives/input.tsx`
+- **Label**: New standalone `Label` component (with `LabelProps` type) exported from `components/Label`
+- **Textarea**: New `Textarea` component (with `TextareaProps` type) exported from `components/Textarea`
+- **Select**, **Switch**: New `Select` and `Switch` component directories added
+- **vite-plugin-dts**: Added `vite-plugin-dts` to build pipeline so TypeScript declaration files are generated correctly on every build
+- Added `@radix-ui/react-tabs` as a runtime dependency
+
+### Changed
+
+- Bumped version 0.0.16 → 0.0.17
+- Moved `"files": ["dist"]` to top of `package.json` exports block; fixed indentation of `./package.json` export entry
+- Added `dts()` plugin to `vite.config.ts` with `rollupTypes: false` targeting `tsconfig.app.json`
+- Added `@radix-ui/react-tabs` to `rollupOptions.external` in `vite.config.ts` so it is not bundled
+
 ## [0.0.14] - 2026-03-22
 
 ### Added
