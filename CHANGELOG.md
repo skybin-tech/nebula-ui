@@ -2,6 +2,79 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] — New primitives; expanded barrel exports; Form field updates; hooks
+
+### Added
+- **Dialog**: full Radix dialog exported from barrel (`Dialog`, `DialogPortal`, `DialogOverlay`, `DialogClose`, `DialogTrigger`, `DialogContent`, `DialogHeader`, `DialogFooter`, `DialogTitle`, `DialogDescription`)
+- **Popover**: `Popover`, `PopoverTrigger`, `PopoverContent`, `PopoverAnchor` exported from barrel
+- **ScrollArea**: `ScrollArea`, `ScrollBar` exported from barrel
+- **Toggle**: `Toggle`, `toggleVariants` exported from barrel
+- **Table**: full table set exported from barrel (`Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableHead`, `TableRow`, `TableCell`, `TableCaption`)
+- **Calendar**, **Command**, **Sonner**, **Toast** primitives added to `src/primitives/` and `src/components/`
+- **Standalone Select**: raw Radix root and all sub-parts (`SelectGroup`, `SelectValue`, `SelectTrigger`, `SelectContent`, `SelectLabel`, `SelectItem`, `SelectSeparator`, scroll buttons) exported for use outside a Form context
+- `src/hooks/useToast.ts` — toast hook for use with the Sonner/Toast primitives
+- `src/hooks/useDebounce.ts`, `useToggle.ts` — general-purpose hooks exported from barrel
+- `vite.config.ts` — expanded rollup `external` and `input` entries to cover new primitives; proper tree-shaking boundaries
+- `src/primitives/index.ts` — barrel for all primitives (used internally; not re-exported publicly)
+
+### Changed
+- `src/components/Form/` — all form field components (`Checkbox`, `Radio`, `Select`, `Switch`, `TextArea`, `TextBox`, context, hooks, index) updated with minor fixes
+- `src/components/Button/Button.tsx` — minor variant update
+- Barrel (`src/index.ts`) — `Checkbox` form export renamed to `FormCheckbox`; standalone `Checkbox` now the default `Checkbox` export; `Select` form export removed from Form group (raw primitives exported separately)
+- `package.json` — updated peer dependencies and dev tooling
+
+## [0.0.24] - 2026-04-25
+
+### Added
+
+- **Checkbox** (standalone): `Checkbox` component exported from barrel for use without a `<Form>` / RHF context — wraps the Radix checkbox primitive with the same styled API as `Input` and `Label`
+- **FormCheckbox**: Form-integrated checkbox now also exported as `FormCheckbox` from barrel so both variants are accessible at the same import path without conflict
+
+### Changed
+
+- Barrel export of `Checkbox` now points to the standalone primitive wrapper (most common use case); form-integrated version is still available as `FormCheckbox`
+
+## [0.0.23] - 2026-04-25
+
+### Fixed
+
+- Export raw `Select` root + all sub-parts (`SelectGroup`, `SelectValue`, `SelectTrigger`, `SelectContent`, `SelectLabel`, `SelectItem`, `SelectSeparator`) from barrel for standalone (non-form) use
+- Remove duplicate `Select` export from Form barrel entry to avoid conflict
+
+## [0.0.22] - 2026-04-25
+
+### Fixed
+
+- Emit `'use client'` on all output files (primitives + components + hooks) — fixes cmdk and other third-party primitives that lack the directive
+
+## [0.0.21] - 2026-04-25
+
+### Fixed
+
+- Rollup `banner` function now emits `'use client';` at the top of all built component and hook files — fixes Next.js App Router RSC compatibility where Vite was stripping the directive from source files
+
+## [0.0.20] - 2026-04-25
+
+### Fixed
+
+- Added `'use client'` directives to all Form components (`Form`, `Select`, `Checkbox`, `Radio`, `Switch`, `TextArea`, `TextBox`, `context`, `hooks`) and hooks (`useToast`, `useToggle`, `useDebounce`) — required for Next.js App Router RSC compatibility
+
+## [0.0.19] - 2026-04-25
+
+### Added
+
+- **Dialog**: `Dialog`, `DialogTrigger`, `DialogContent`, `DialogHeader`, `DialogFooter`, `DialogTitle`, `DialogDescription`, `DialogClose`, `DialogOverlay`, `DialogPortal`
+- **Popover**: `Popover`, `PopoverTrigger`, `PopoverContent`, `PopoverAnchor`
+- **ScrollArea**: `ScrollArea`, `ScrollBar`
+- **Toggle**: `Toggle`, `toggleVariants`
+- **Table**: `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableHead`, `TableRow`, `TableCell`, `TableCaption`
+- **Command**: `Command`, `CommandDialog`, `CommandInput`, `CommandList`, `CommandEmpty`, `CommandGroup`, `CommandItem`, `CommandSeparator`, `CommandShortcut`
+- **Calendar**: `Calendar` (built on `react-day-picker` v9)
+- **Sonner**: `Toaster` (sonner-based toast notifications)
+- **Toast**: `Toast`, `ToastProvider`, `ToastViewport`, `ToastTitle`, `ToastDescription`, `ToastAction`, `ToastClose`
+- **useToast**: `useToast` hook and `toast` helper for imperative toast dispatch
+- New peer dependencies: `@radix-ui/react-dialog`, `@radix-ui/react-popover`, `@radix-ui/react-scroll-area`, `@radix-ui/react-toggle`, `@radix-ui/react-toast`, `cmdk`, `date-fns`, `react-day-picker`, `sonner`
+
 ## [0.0.17] - 2026-04-03
 
 ### Added

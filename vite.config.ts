@@ -45,8 +45,11 @@ export default defineConfig({
         "@hookform/resolvers", 
         "@hookform/resolvers/zod",
         "@radix-ui/react-checkbox",
+        "@radix-ui/react-dialog",
         "@radix-ui/react-label",
+        "@radix-ui/react-popover",
         "@radix-ui/react-radio-group",
+        "@radix-ui/react-scroll-area",
         "@radix-ui/react-select",
         "@radix-ui/react-switch",
         "@radix-ui/react-dropdown-menu",
@@ -54,6 +57,12 @@ export default defineConfig({
         "@radix-ui/react-slot",
         "@radix-ui/react-avatar",
         "@radix-ui/react-tabs",
+        "@radix-ui/react-toast",
+        "@radix-ui/react-toggle",
+        "cmdk",
+        "date-fns",
+        "react-day-picker",
+        "sonner",
         "lucide-react",
         "class-variance-authority",
         "tailwind-merge",
@@ -69,6 +78,9 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: "src",
           exports: "named",
+          banner() {
+            return "'use client';";
+          },
         },
         {
           format: "cjs",
@@ -78,6 +90,9 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: "src",
           exports: "named",
+          banner() {
+            return "'use client';";
+          },
         }
       ],
     },

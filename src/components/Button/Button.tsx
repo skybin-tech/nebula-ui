@@ -71,7 +71,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
               <span className="size-4 border-2 border-current border-r-transparent rounded-full animate-spin" />
             </span>
           )}
-          <span className={cn(loading && "invisible")}>{children}</span>
+          <span className={cn("inline-flex items-center gap-2", loading && "invisible")}>{children}</span>
         </>
       )}
     </ButtonPrimitive>

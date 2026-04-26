@@ -1,3 +1,5 @@
+'use client';
+
 import { useId, useContext, useEffect } from "react";
 import type { ReactNode } from "react";
 import { useController, useFormContext as useRHFFormContext, type FieldValues, type FieldPath, type Control } from "react-hook-form";

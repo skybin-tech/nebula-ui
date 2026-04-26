@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useCallback, useRef } from "react";
 import type { UseFormReturn, FieldValues } from "react-hook-form";
 import { z } from "zod";

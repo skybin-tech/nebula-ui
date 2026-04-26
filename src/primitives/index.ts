@@ -56,3 +56,53 @@ export { Separator } from "./separator"
 export { Input } from "./input"
 export { Alert, AlertTitle, AlertDescription } from "./alert"
 export { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs"
+export {
+  Dialog,
+  DialogPortal,
+  DialogOverlay,
+  DialogClose,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from "./dialog"
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor } from "./popover"
+export { ScrollArea, ScrollBar } from "./scroll-area"
+export { Toggle, toggleVariants } from "./toggle"
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+} from "./table"
+export {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandSeparator,
+  CommandShortcut,
+} from "./command"
+export { Calendar } from "./calendar"
+export type { CalendarProps } from "./calendar"
+export { Toaster } from "./sonner"
+export {
+  type ToastProps,
+  type ToastActionElement,
+  ToastProvider,
+  ToastViewport,
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  ToastClose,
+  ToastAction,
+} from "./toast"
