@@ -1,6 +1,6 @@
 {
   "name": "@skybin-tech/nebula-ui",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "type": "module",
   "author": "Anwar <anwar@skybin.io>",
   "description": "Reusable React component library with form validation using shadcn/ui patterns, react-hook-form, and Zod",
@@ -231,6 +231,46 @@
         "types": "./dist/components/Checkbox/Checkbox.d.ts",
         "default": "./dist/cjs/components/Checkbox/Checkbox.cjs"
       }
+    },
+    "./components/Tooltip": {
+      "import": {
+        "types": "./dist/components/Tooltip/index.d.ts",
+        "default": "./dist/components/Tooltip/index.js"
+      },
+      "require": {
+        "types": "./dist/components/Tooltip/index.d.ts",
+        "default": "./dist/cjs/components/Tooltip/index.cjs"
+      }
+    },
+    "./components/Skeleton": {
+      "import": {
+        "types": "./dist/components/Skeleton/index.d.ts",
+        "default": "./dist/components/Skeleton/index.js"
+      },
+      "require": {
+        "types": "./dist/components/Skeleton/index.d.ts",
+        "default": "./dist/cjs/components/Skeleton/index.cjs"
+      }
+    },
+    "./components/Accordion": {
+      "import": {
+        "types": "./dist/components/Accordion/index.d.ts",
+        "default": "./dist/components/Accordion/index.js"
+      },
+      "require": {
+        "types": "./dist/components/Accordion/index.d.ts",
+        "default": "./dist/cjs/components/Accordion/index.cjs"
+      }
+    },
+    "./components/Pagination": {
+      "import": {
+        "types": "./dist/components/Pagination/index.d.ts",
+        "default": "./dist/components/Pagination/index.js"
+      },
+      "require": {
+        "types": "./dist/components/Pagination/index.d.ts",
+        "default": "./dist/cjs/components/Pagination/index.cjs"
+      }
     }
   },
   "typesVersions": {
@@ -297,6 +337,18 @@
       ],
       "components/Checkbox": [
         "./dist/components/Checkbox/Checkbox.d.ts"
+      ],
+      "components/Tooltip": [
+        "./dist/components/Tooltip/index.d.ts"
+      ],
+      "components/Skeleton": [
+        "./dist/components/Skeleton/index.d.ts"
+      ],
+      "components/Accordion": [
+        "./dist/components/Accordion/index.d.ts"
+      ],
+      "components/Pagination": [
+        "./dist/components/Pagination/index.d.ts"
       ]
     }
   },
@@ -330,6 +382,8 @@
     "@radix-ui/react-switch": ">=1.0.0",
     "@radix-ui/react-toast": ">=1.0.0",
     "@radix-ui/react-toggle": ">=1.0.0",
+    "@radix-ui/react-tooltip": ">=1.0.0",
+    "@radix-ui/react-accordion": ">=1.0.0",
     "class-variance-authority": ">=0.7.0",
     "clsx": ">=2.0.0",
     "cmdk": ">=1.0.0",
@@ -373,6 +427,8 @@
     "@radix-ui/react-switch": "^1.2.6",
     "@radix-ui/react-toast": "^1.2.15",
     "@radix-ui/react-toggle": "^1.1.10",
+    "@radix-ui/react-tooltip": "^1.2.7",
+    "@radix-ui/react-accordion": "^1.2.11",
     "@storybook/addon-a11y": "^10.2.17",
     "@storybook/addon-docs": "^10.2.17",
     "@storybook/addon-onboarding": "^10.2.17",

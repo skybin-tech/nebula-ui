@@ -169,5 +169,27 @@ export { useToggle } from "./hooks/useToggle"
 export { useDebounce } from "./hooks/useDebounce"
 export { useToast, toast } from "./hooks/useToast"
 
+// ─── Tooltip ─────────────────────────────────────────────────────────────────
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "./components/Tooltip"
+export type { TooltipContentProps } from "./components/Tooltip"
+
+// ─── Skeleton ────────────────────────────────────────────────────────────────
+export { Skeleton } from "./components/Skeleton"
+export type { SkeletonProps } from "./components/Skeleton"
+
+// ─── Accordion ───────────────────────────────────────────────────────────────
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./components/Accordion"
+
+// ─── Pagination ──────────────────────────────────────────────────────────────
+export {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+  PaginationEllipsis,
+} from "./components/Pagination"
+
 // ─── Utils ───────────────────────────────────────────────────────────────────
 export { cn } from "./utils/cn"

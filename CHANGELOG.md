@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.25] - 2026-04-27
+
+### Added
+- **Tooltip**: `Tooltip`, `TooltipTrigger`, `TooltipContent`, `TooltipProvider` — wraps `@radix-ui/react-tooltip` with portal, animation, and theme-aware styling
+- **Skeleton**: `Skeleton` — animated pulse placeholder for loading states; accepts any `className` for sizing
+- **Accordion**: `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionContent` — wraps `@radix-ui/react-accordion` with animated open/close and chevron rotation
+- **Pagination**: `Pagination`, `PaginationContent`, `PaginationItem`, `PaginationLink`, `PaginationPrevious`, `PaginationNext`, `PaginationEllipsis` — fully accessible page navigation with aria labels and active-state styling
+- **Badge variants** `success`, `warning`, `info` — semantic colour variants (emerald/amber/sky) alongside existing `default`, `secondary`, `destructive`, `outline`
+
+### Changed
+- `package.json` — added `@radix-ui/react-tooltip` and `@radix-ui/react-accordion` to peer deps and dev deps
+- `vite.config.ts` — new Radix packages externalised for proper tree-shaking
+
 ## [Unreleased] — New primitives; expanded barrel exports; Form field updates; hooks
 
 ### Added
