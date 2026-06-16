@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.26] - 2026-06-16
+
+### Changed
+- `package.json` — bump Storybook 10.2→10.4, Vite 7→8, Vitest 4.1.0→4.1.9, Tailwind 4.2→4.3, Radix UI dev deps, lucide-react, react-day-picker 9→10, zod 3→4, and related toolchain packages; `@radix-ui/react-tabs` 1.1.13→1.1.15
+
 ## [0.0.25] - 2026-04-27
 
 ### Added
