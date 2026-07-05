@@ -116,10 +116,13 @@ declare module '@skybin-tech/nebula-ui' {
   export const RadioGroup: React.FC<RadioGroupProps>;
   export const RadioItem: React.FC<any>;
 
-  export interface SwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  export interface FormSwitchProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
   }
-  export const Switch: React.ForwardRefExoticComponent<SwitchProps & React.RefAttributes<HTMLInputElement>>;
+  export const FormSwitch: React.ForwardRefExoticComponent<FormSwitchProps & React.RefAttributes<HTMLInputElement>>;
+
+  export interface StandaloneSwitchProps extends React.ComponentPropsWithoutRef<'button'> {}
+  export const Switch: React.ForwardRefExoticComponent<StandaloneSwitchProps & React.RefAttributes<HTMLButtonElement>>;
 
   // Form Context & Hooks
   export const FormConfigContext: React.Context<any>;

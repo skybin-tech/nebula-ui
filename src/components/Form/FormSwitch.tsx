@@ -41,7 +41,7 @@ const labelVariants = cva(
   }
 );
 
-export interface SwitchProps<
+export interface FormSwitchProps<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > extends Omit<ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>, "name" | "checked" | "onCheckedChange" | "required">,
@@ -62,7 +62,7 @@ export interface SwitchProps<
   checkedText?: ReactNode;
   /** Text to show when unchecked */
   uncheckedText?: ReactNode;
-  
+
   // Validation props
   /** Field is required (must be on) */
   required?: boolean | string;
@@ -72,22 +72,22 @@ export interface SwitchProps<
 
 /**
  * Switch component with form integration
- * 
+ *
  * This is a wrapper around the shadcn/ui Switch primitive that adds:
  * - Form integration with react-hook-form
  * - Automatic validation registration
  * - Label, helper text, and error message support
  * - Checked/unchecked text display
- * 
+ *
  * @example
  * ```tsx
  * // Inside a Form component
- * <Switch name="notifications" label="Enable notifications" />
- * <Switch name="terms" label="Accept terms" required="You must accept the terms" />
- * <Switch name="darkMode" label="Dark mode" checkedText="On" uncheckedText="Off" />
+ * <FormSwitch name="notifications" label="Enable notifications" />
+ * <FormSwitch name="terms" label="Accept terms" required="You must accept the terms" />
+ * <FormSwitch name="darkMode" label="Dark mode" checkedText="On" uncheckedText="Off" />
  * ```
  */
-function SwitchInner<
+function FormSwitchInner<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >(
@@ -108,16 +108,16 @@ function SwitchInner<
     required,
     validate,
     ...props
-  }: SwitchProps<TFieldValues, TName>,
+  }: FormSwitchProps<TFieldValues, TName>,
   ref: React.ForwardedRef<React.ElementRef<typeof SwitchPrimitives.Root>>
 ) {
   const generatedId = useId();
   const inputId = providedId ?? generatedId;
-  
+
   // Try to get form context
   const formConfigContext = useContext(FormConfigContext);
   const formConfig: FormConfig = formConfigContext ?? {};
-  
+
   // Get form context from react-hook-form
   const rhfContext = useRHFFormContext<TFieldValues>();
   const control = externalControl ?? rhfContext?.control;
@@ -126,7 +126,7 @@ function SwitchInner<
   useEffect(() => {
     if (formConfigContext?.registerFieldValidation) {
       const rules: FieldValidationRules = {};
-      
+
       if (required !== undefined) rules.required = required;
       if (validate !== undefined) rules.validate = validate;
 
@@ -151,7 +151,7 @@ function SwitchInner<
   const fieldError = fieldState.error?.message;
   const errorMessage = customError ?? fieldError;
   const hasError = !!errorMessage;
-  
+
   // Merge sizes - prop takes precedence over form config
   const effectiveSize = size ?? formConfig.size ?? "md";
   const effectiveDisabled = disabled ?? formConfig.disabled;
@@ -173,13 +173,13 @@ function SwitchInner<
             className
           )}
         />
-        
+
         {(checkedText || uncheckedText) && (
           <span className="text-sm text-muted-foreground">
             {isChecked ? checkedText : uncheckedText}
           </span>
         )}
-        
+
         {label && (
           <Label
             id={`${inputId}-label`}
@@ -196,7 +196,7 @@ function SwitchInner<
           {errorMessage}
         </p>
       )}
-      
+
       {helperText && !hasError && (
         <p className="text-sm text-muted-foreground">
           {helperText}
@@ -206,12 +206,11 @@ function SwitchInner<
   );
 }
 
-// Use forwardRef with generic support
-export const Switch = forwardRef(SwitchInner) as <
+export const FormSwitch = forwardRef(FormSwitchInner) as <
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >(
-  props: SwitchProps<TFieldValues, TName> & { ref?: React.ForwardedRef<React.ElementRef<typeof SwitchPrimitives.Root>> }
+  props: FormSwitchProps<TFieldValues, TName> & { ref?: React.ForwardedRef<React.ElementRef<typeof SwitchPrimitives.Root>> }
 ) => React.ReactElement;
 
-(Switch as React.FC).displayName = "Switch";
+(FormSwitch as React.FC).displayName = "FormSwitch";

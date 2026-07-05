@@ -5,7 +5,7 @@ import { TextArea } from '../TextArea';
 import { Select } from '../Select';
 import { Checkbox } from '../Checkbox';
 import { RadioGroup } from '../Radio';
-import { Switch } from '../Switch';
+import { FormSwitch } from '../FormSwitch';
 import { Button } from '../../Button/Button';
 
 const meta = {
@@ -179,7 +179,7 @@ export const CompleteForm: Story = {
           direction="horizontal"
         />
         
-        <Switch 
+        <FormSwitch 
           name="newsletter" 
           label="Subscribe to newsletter"
         />

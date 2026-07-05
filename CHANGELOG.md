@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.27] - 2026-07-05
+
+### Added
+- **Switch**: standalone shadcn/Radix `Switch` primitive exported from the main barrel and `./components/Switch` subpath
+- `StandaloneSwitchProps` type alias exported from the main barrel for the standalone switch
+
+### Changed
+- **Breaking**: form-integrated switch renamed from `Switch` / `SwitchProps` to `FormSwitch` / `FormSwitchProps` to avoid collision with the standalone primitive (mirrors `FormCheckbox` pattern)
+- **Calendar**: updated `classNames` keys to react-day-picker v10 API (`caption` → `month_caption`, `nav_button_*` → `button_previous`/`button_next`, `table` → `month_grid`, `head_row/cell` → `weekdays/weekday`, `row` → `week`, `cell` → `day`, `day` → `day_button`, `day_*` modifiers → bare names)
+- **deps**: removed unused devDependencies (`@chromatic-com/storybook`, `glob`, `@types/glob`, `esbuild`, `playwright`, `vite-plugin-eslint`); pinned `vitest`/`@vitest/browser-playwright`/`@vitest/coverage-v8` to `4.1.9` to resolve peer dependency conflict with `@storybook/addon-vitest`; sorted `@radix-ui` entries alphabetically
+
 ## [0.0.26] - 2026-06-16
 
 ### Changed

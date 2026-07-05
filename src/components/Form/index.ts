@@ -17,8 +17,8 @@ export type { CheckboxProps } from "./Checkbox";
 export { RadioGroup, RadioItem } from "./Radio";
 export type { RadioGroupProps, RadioItemProps, RadioOption } from "./Radio";
 
-export { Switch } from "./Switch";
-export type { SwitchProps } from "./Switch";
+export { FormSwitch } from "./FormSwitch";
+export type { FormSwitchProps } from "./FormSwitch";
 
 // Context and types
 export { 

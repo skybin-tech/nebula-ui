@@ -10,7 +10,7 @@ export {
   FormCheckbox,
   RadioGroup,
   RadioItem,
-  Switch,
+  FormSwitch,
   FormConfigContext,
   defaultFormConfig,
   buildZodSchemaFromRules,
@@ -31,7 +31,7 @@ export type {
   RadioGroupProps,
   RadioItemProps,
   RadioOption,
-  SwitchProps,
+  FormSwitchProps,
   FormConfig,
   FormContextValue,
   FieldValidationRules,
@@ -104,6 +104,9 @@ export type { LabelProps } from "./components/Label"
 
 export { Textarea } from "./components/Textarea"
 export type { TextareaProps } from "./components/Textarea"
+
+export { Switch } from "./components/Switch"
+export type { SwitchProps as StandaloneSwitchProps } from "./components/Switch"
 
 export {
   Dialog,
