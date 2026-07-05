@@ -134,10 +134,12 @@ Supports the same validation props as `TextBox` (except `minValue`, `maxValue`, 
 
 ### Select
 
-Dropdown select with support for an `options` array or custom `children`.
+Dropdown select with support for an `options` array or custom `children`. Import as `FormSelect` from the main package (or `Select` from `@skybin-tech/nebula-ui/components/Form`).
 
 ```tsx
-<Select
+import { Form, FormSelect } from "@skybin-tech/nebula-ui";
+
+<FormSelect
   name="country"
   label="Country"
   required
@@ -148,10 +150,10 @@ Dropdown select with support for an `options` array or custom `children`.
 />
 
 // Or with custom children
-<Select name="role" label="Role" required>
+<FormSelect name="role" label="Role" required>
   <SelectItem value="admin">Admin</SelectItem>
   <SelectItem value="user">User</SelectItem>
-</Select>
+</FormSelect>
 ```
 
 ---

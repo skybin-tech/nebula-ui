@@ -21,12 +21,12 @@ export {
   useFieldError,
 } from "./components/Form"
 
+export { Select as FormSelect } from "./components/Form/Select"
+
 export type {
   FormProps,
   TextBoxProps,
   TextAreaProps,
-  SelectProps,
-  SelectOption,
   CheckboxProps,
   RadioGroupProps,
   RadioItemProps,
@@ -37,6 +37,8 @@ export type {
   FieldValidationRules,
   FieldRegistration,
 } from "./components/Form"
+
+export type { SelectProps as FormSelectProps, SelectOption } from "./components/Form/Select"
 
 // ─── Standalone Checkbox ─────────────────────────────────────────────────────
 export { Checkbox } from "./components/Checkbox/Checkbox"

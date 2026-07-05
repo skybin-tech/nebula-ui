@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.28] - 2026-07-05
+
+### Added
+- **FormSelect**: form-integrated `Select` exported from the main barrel as `FormSelect` (with `FormSelectProps` and `SelectOption` types)
+
+### Fixed
+- Form `Select` was declared in types but missing from the published JS bundle because it was not imported by the main entry
+
 ## [0.0.27] - 2026-07-05
 
 ### Added
