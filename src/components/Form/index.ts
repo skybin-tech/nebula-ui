@@ -8,8 +8,8 @@ export type { TextBoxProps } from "./TextBox";
 export { TextArea } from "./TextArea";
 export type { TextAreaProps } from "./TextArea";
 
-export { Select } from "./Select";
-export type { SelectProps, SelectOption } from "./Select";
+export { Select, Select as FormSelect } from "./Select";
+export type { SelectProps, SelectProps as FormSelectProps, SelectOption } from "./Select";
 
 export { Checkbox, Checkbox as FormCheckbox } from "./Checkbox";
 export type { CheckboxProps } from "./Checkbox";

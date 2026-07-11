@@ -2,13 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.0.28] - 2026-07-05
+## [0.0.28] - 2026-07-11
 
 ### Added
-- **FormSelect**: form-integrated `Select` exported from the main barrel as `FormSelect` (with `FormSelectProps` and `SelectOption` types)
+- **FormSelect**: form-integrated `Select` exported from the main barrel as `FormSelect` (with `FormSelectProps` and `SelectOption` types); also available from `@skybin-tech/nebula-ui/components/Form`
 
 ### Fixed
 - Form `Select` was declared in types but missing from the published JS bundle because it was not imported by the main entry
+- `./components/Form` package export pointed at `Form.js` only; barrel `index.js` is now emitted and exported so subpath imports resolve `FormSelect`, `TextBox`, and other form fields
 
 ## [0.0.27] - 2026-07-05
 

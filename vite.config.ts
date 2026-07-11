@@ -31,7 +31,11 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: {
+        index: resolve(__dirname, "src/index.ts"),
+        // Ensure Form barrel is emitted so `./components/Form` package export works
+        "components/Form/index": resolve(__dirname, "src/components/Form/index.ts"),
+      },
       formats: ["es", "cjs"]
     },
     rollupOptions: {
